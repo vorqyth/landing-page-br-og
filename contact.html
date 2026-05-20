@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0a; --surface: #111111; --border: #1e1e1e;
+      --gold: #d97706; --gold-light: #f59e0b; --blue-light: #3b82f6;
+      --text: #e5e7eb; --muted: #9ca3af; --radius: 12px;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+    .back-link:hover { color: var(--text); }
+    h1 { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .contact-card h3 { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+    .contact-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-icon { font-size: 1.2rem; }
+    .contact-text strong { display: block; color: var(--text); font-size: 0.9rem; }
+    .contact-text span { color: var(--muted); font-size: 0.85rem; }
+    .contact-text a { color: var(--blue-light); text-decoration: none; font-size: 0.85rem; }
+    .faq-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .faq-card h3 { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-item:last-child { margin-bottom: 0; }
+    .faq-item strong { display: block; color: var(--text); font-size: 0.9rem; margin-bottom: 6px; }
+    .faq-item p { color: var(--muted); font-size: 0.85rem; }
+    footer { border-top: 1px solid var(--border); padding: 28px 20px; margin-top: 40px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 12px; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { text-align: center; color: var(--muted); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="../index.html" class="back-link">← Voltar</a>
+  <h1>Contato</h1>
+  <p class="subtitle">Estamos aqui para ajudar. Entre em contato conosco através dos canais abaixo.</p>
+
+  <div class="contact-card">
+    <h3>Canais de Suporte</h3>
+    <div class="contact-item">
+      <div class="contact-icon">📧</div>
+      <div class="contact-text">
+        <strong>E-mail</strong>
+        <a href="mailto:vorqyth@gmail.com">vorqyth@gmail.com</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">⏱️</div>
+      <div class="contact-text">
+        <strong>Tempo de Resposta</strong>
+        <span>Geralmente respondemos em até 24–48 horas</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🌍</div>
+      <div class="contact-text">
+        <strong>Idiomas</strong>
+        <span>Português, Inglês</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-card">
+    <h3>Perguntas Frequentes</h3>
+    <div class="faq-item">
+      <strong>O que é a verificação humana?</strong>
+      <p>É um processo simples e rápido que confirma que você é um usuário real. Após a conclusão, você tem acesso imediato ao conteúdo premium.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Por que minha VPN está sendo bloqueada?</strong>
+      <p>Para garantir a qualidade do serviço e prevenir fraudes, não permitimos acesso através de VPN ou proxy. Desative-os e tente novamente.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Não recebi acesso após a verificação. O que faço?</strong>
+      <p>Certifique-se de que a verificação foi concluída com sucesso. Se o problema persistir, entre em contato conosco com os detalhes da sua sessão.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Meus dados estão seguros?</strong>
+      <p>Sim. Consulte nossa <a href="./privacy-policy.html">Política de Privacidade</a> para detalhes completos sobre como protegemos suas informações.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="./privacy-policy.html">Política de Privacidade</a>
+    <a href="./terms-of-service.html">Termos de Serviço</a>
+    <a href="./contact.html">Contato</a>
+  </div>
+  <p class="footer-copy">© 2026 Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

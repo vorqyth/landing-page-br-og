@@ -1,332 +1,342 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesse Recursos de Alto Valor | Conteúdo Digital Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #0a0a0a;
-            --gold-border: #d97706;
-            --blue-border: #1e40af;
-            --text-light: #e0e0e0;
-            --text-gold: #d97706;
-            --text-blue: #60a5fa;
-            --button-gold-bg: #d97706;
-            --button-gold-text: #0a0a0a;
-            --button-blue-bg: transparent;
-            --button-blue-border: #60a5fa;
-            --button-blue-text: #60a5fa;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprenda sobre o Vercel v0, a ferramenta de IA que gera interfaces profissionais instantaneamente. Acesse recursos exclusivos e bônus especiais.">
+  <title>Vercel v0: A Ferramenta de IA que Constrói UI Instantaneamente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: #1e1e1e;
+      --gold: #d97706;
+      --gold-light: #f59e0b;
+      --blue: #1e40af;
+      --blue-light: #3b82f6;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --radius: 12px;
+    }
 
-        .container {
-            max-width: 900px;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-        header {
-            text-align: center;
-            padding: 40px 20px;
-        }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
 
-        h1 {
-            color: var(--text-light);
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    /* INSTRUCTIONS CARD */
+    .instructions-card {
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      background: rgba(217, 119, 6, 0.05);
+      box-shadow: 0 0 20px rgba(217, 119, 6, 0.08);
+    }
 
-        h2 {
-            color: var(--text-light);
-            font-size: 2em;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
+    .instructions-card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        h3 {
-            color: var(--text-light);
-            font-size: 1.5em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+    .instructions-card ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-        p {
-            margin-bottom: 15px;
-        }
+    .instructions-card li {
+      color: var(--text);
+      font-size: 0.95rem;
+    }
 
-        .card {
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+    /* ARTICLE */
+    .article {
+      margin-bottom: 40px;
+    }
 
-        .card.gold-border {
-            border: 2px solid var(--gold-border);
-        }
+    .article h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
 
-        .card.blue-border {
-            border: 2px solid var(--blue-border);
-        }
+    .article-meta {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
 
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-        }
+    .article h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--blue-light);
+      margin: 32px 0 12px;
+    }
 
-        .button.gold {
-            background-color: var(--button-gold-bg);
-            color: var(--button-gold-text);
-            border: none;
-            font-size: 1.2em;
-        }
+    .article h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 20px 0 8px;
+    }
 
-        .button.gold:hover {
-            background-color: #e6912b;
-        }
+    .article p {
+      color: #d1d5db;
+      margin-bottom: 16px;
+      font-size: 0.97rem;
+    }
 
-        .button.blue-outlined {
-            background-color: var(--button-blue-bg);
-            color: var(--button-blue-text);
-            border: 2px solid var(--button-blue-border);
-        }
+    .article ul, .article ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-        .button.blue-outlined:hover {
-            background-color: rgba(96, 165, 250, 0.1);
-        }
+    .article li {
+      color: #d1d5db;
+      font-size: 0.97rem;
+    }
 
-        .list-numbered {
-            list-style-type: decimal;
-            margin-left: 20px;
-            padding-left: 0;
-        }
+    .article strong {
+      color: var(--text);
+      font-weight: 600;
+    }
 
-        .list-numbered li {
-            margin-bottom: 10px;
-        }
+    /* VERCEL LINK SECTION */
+    .vercel-section {
+      text-align: center;
+      margin: 40px 0;
+      padding: 28px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
 
-        .vpn-blocker {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            font-size: 1.5em;
-            text-align: center;
-            padding-top: 20%;
-            z-index: 1000;
-        }
+    .vercel-section p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(217, 119, 6, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
-        }
+    .btn-vercel {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1.5px solid var(--blue-light);
+      border-radius: 8px;
+      color: var(--blue-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
 
-        .pulse-button {
-            animation: pulse 2s infinite;
-        }
+    .btn-vercel:hover {
+      background: rgba(59, 130, 246, 0.1);
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9em;
-            color: #888;
-            margin-top: 40px;
-        }
+    /* BONUS CARD */
+    .bonus-card {
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin: 40px 0;
+      background: rgba(217, 119, 6, 0.05);
+      text-align: center;
+      box-shadow: 0 0 30px rgba(217, 119, 6, 0.1);
+    }
 
-        footer a {
-            color: var(--text-blue);
-            text-decoration: none;
-        }
+    .bonus-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .btn-bonus {
+      display: inline-block;
+      padding: 16px 48px;
+      background: var(--gold);
+      color: #000;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      animation: pulse-gold 2.5s infinite;
+      transition: transform 0.2s;
+    }
+
+    .btn-bonus:hover { transform: scale(1.03); }
+
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.5); }
+      50% { box-shadow: 0 0 0 12px rgba(217, 119, 6, 0); }
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      margin-top: 40px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .article h1 { font-size: 1.4rem; }
+      .instructions-card { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="vpn-blocker" id="vpnBlocker">
-        Detectamos o uso de VPN ou proxy na sua conexão. Por favor, desative-o antes de continuar para garantir o acesso ao seu bônus.
-    </div>
 
-    <div class="container">
-        <header>
-            <h1>Parabéns por chegar à etapa final!</h1>
-            <p>Você está a um passo de acessar todos os recursos premium. Complete a verificação humana abaixo para desbloquear seu conteúdo exclusivo.</p>
-        </header>
+<div class="container">
 
-        <!-- Section 1: Instructions Card -->
-        <div class="card gold-border">
-            <h2>Siga estas instruções com atenção para garantir seu acesso</h2>
-            <ol class="list-numbered">
-                <li>Siga estas instruções com atenção para garantir seu acesso</li>
-                <li>Se deseja o bônus, role até o final desta página</li>
-                <li>Complete a verificação e acesse a página de recompensa — você encontrará o que procura lá</li>
-            </ol>
-        </div>
+  <!-- INSTRUCTIONS -->
+  <div class="instructions-card">
+    <h2>⚡ Parabéns por chegar à etapa final!</h2>
+    <ol>
+      <li>Siga estas instruções com atenção para garantir seu acesso</li>
+      <li>Se deseja o bônus, role até o final desta página</li>
+      <li>Complete a verificação e acesse a página de recompensa — você encontrará o que procura lá</li>
+    </ol>
+  </div>
 
-        <!-- Section 2: Article about Vercel v0 -->
-        <div class="card blue-border">
-            <h2>Vercel v0: Revolucionando o Desenvolvimento de UI com IA</h2>
-            <h3>O que é o Vercel v0?</h3>
-            <p>Vercel v0 é uma ferramenta inovadora que permite aos desenvolvedores gerar componentes de interface de usuário (UI) de alta qualidade usando inteligência artificial. Em vez de escrever código do zero, você pode descrever o que precisa em linguagem natural, e o v0 gera o código React, Tailwind CSS e Shadcn UI para você. Isso acelera drasticamente o processo de desenvolvimento, permitindo que você se concentre na lógica de negócios e na experiência do usuário.</p>
+  <!-- ARTICLE -->
+  <article class="article">
+    <h1>Vercel v0: A Ferramenta de IA que Constrói UI Instantaneamente</h1>
+    <p class="article-meta">Guia completo • Leitura de 5 minutos</p>
 
-            <h3>O Problema que o v0 Resolve</h3>
-            <p>O desenvolvimento de UI pode ser demorado e repetitivo. Designers criam mockups, e desenvolvedores os traduzem manualmente em código. Esse processo é propenso a erros e pode levar a inconsistências. O v0 elimina essa lacuna, automatizando a criação de componentes, garantindo que o código gerado seja otimizado e siga as melhores práticas de design e desenvolvimento.</p>
+    <h2>O que é o Vercel v0?</h2>
+    <p>O Vercel v0 é uma plataforma de geração de código baseada em inteligência artificial que transforma descrições em linguagem natural em componentes React totalmente funcionais e prontos para produção. Construído sobre modelos de linguagem avançados e treinado em milhares de padrões de design de alta qualidade, o v0 elimina a codificação manual tediosa de interfaces.</p>
 
-            <h3>Principais Recursos</h3>
-            <ul>
-                <li><strong>Geração de UI por IA:</strong> Descreva seus componentes e veja o v0 gerar código funcional.</li>
-                <li><strong>Componentes Modulares:</strong> Crie blocos de UI reutilizáveis que podem ser facilmente integrados em seus projetos.</li>
-                <li><strong>Integração com Tailwind CSS e Shadcn UI:</strong> Garante estilos consistentes e modernos, além de acessibilidade.</li>
-                <li><strong>Iteração Rápida:</strong> Experimente diferentes designs e layouts em minutos, não em horas.</li>
-                <li><strong>Código Limpo e Otimizado:</strong> O v0 gera código que é fácil de entender, manter e escalar.</li>
-            </ul>
+    <h2>O Problema que o v0 Resolve</h2>
+    <p>O desenvolvimento tradicional de UI é demorado. Designers criam mockups, desenvolvedores os traduzem manualmente em código, as iterações exigem reescritas e a responsividade mobile demanda planejamento cuidadoso. O v0 comprime esse fluxo de trabalho de dias para minutos.</p>
+    <p>Desenvolvedores podem prototipar rapidamente e focar na lógica de backend. Designers podem transformar mockups diretamente em código funcional. Freelancers entregam projetos mais rapidamente, expandindo sua capacidade e lucratividade.</p>
 
-            <h3>Quem Usa e Como?</h3>
-            <p>Desde startups a grandes empresas, o v0 é ideal para qualquer equipe que busca agilizar o desenvolvimento de UI. Designers podem prototipar ideias rapidamente, enquanto desenvolvedores podem focar em funcionalidades complexas. É perfeito para criar landing pages, dashboards, formulários e qualquer outro elemento de UI que você possa imaginar.</p>
+    <h2>Principais Recursos e Capacidades</h2>
+    <ul>
+      <li><strong>Geração por Linguagem Natural:</strong> Descreva o que você quer em inglês, e o v0 gera o código</li>
+      <li><strong>Design para Código:</strong> Faça upload de imagens e mockups para obter componentes React instantâneos</li>
+      <li><strong>Padrões Responsivos:</strong> Todos os componentes gerados são mobile-first e totalmente responsivos</li>
+      <li><strong>Stack Moderno:</strong> React, Next.js, Tailwind CSS, TypeScript e componentes shadcn/ui</li>
+      <li><strong>Suporte a Integrações:</strong> Conecte bancos de dados (Supabase, Neon), sistemas de pagamento (Stripe) e provedores de IA</li>
+      <li><strong>Iterações em Tempo Real:</strong> Refine e regenere componentes com preview ao vivo</li>
+      <li><strong>Deploy Direto:</strong> Envie para o GitHub e faça deploy na Vercel com um clique</li>
+    </ul>
 
-            <h3>Exemplos Reais</h3>
-            <p>Muitos projetos já estão se beneficiando do v0 para criar interfaces elegantes e responsivas. Por exemplo, equipes de marketing podem gerar rapidamente variações de landing pages para testes A/B, e desenvolvedores podem criar painéis administrativos personalizados sem gastar tempo excessivo na UI.</p>
+    <h2>Quem Usa o v0 e Como</h2>
+    <p><strong>Desenvolvedores</strong> usam o v0 para acelerar seu fluxo de trabalho. Em vez de gastar horas em boilerplate, geram páginas completas em minutos. <strong>Designers</strong> podem transformar mockups diretamente em código funcional sem aprender a programar. <strong>Empreendedores</strong> prototipam ideias rapidamente para validar conceitos antes de comprometer recursos de engenharia. <strong>Agências</strong> escalam a entrega de clientes sem aumentar proporcionalmente o headcount.</p>
 
-            <h3>Como Ganhar Dinheiro com o Vercel v0</h3>
-            <p>O v0 abre novas oportunidades para freelancers e agências. Você pode oferecer serviços de desenvolvimento de UI ultrarrápidos, criando protótipos e produtos mínimos viáveis (MVPs) em tempo recorde. A eficiência do v0 permite que você aceite mais projetos e entregue resultados de alta qualidade em menos tempo, aumentando sua lucratividade.</p>
+    <h2>Exemplos Reais do que Você Pode Construir</h2>
+    <ul>
+      <li>Dashboards SaaS completos com visualização de dados e gerenciamento de usuários</li>
+      <li>Plataformas de e-commerce com catálogos de produtos e fluxos de checkout</li>
+      <li>Ferramentas de colaboração em tempo real com atualizações ao vivo</li>
+      <li>Plataformas de mídia social com autenticação e bancos de dados</li>
+      <li>Sistemas de gerenciamento de conteúdo e painéis administrativos</li>
+      <li>Landing pages responsivas e sites de marketing</li>
+    </ul>
 
-            <h3>Por Que o v0 se Destaca?</h3>
-            <p>A combinação de IA, React, Tailwind CSS e Shadcn UI torna o v0 uma ferramenta poderosa e única. Ele não apenas gera código, mas também garante que ele seja semanticamente correto, acessível e visualmente atraente. É o futuro do desenvolvimento de UI, tornando-o mais acessível e eficiente para todos.</p>
-        </div>
+    <h2>Como Ganhar Dinheiro com o v0</h2>
 
-        <!-- Section 3: Official Vercel v0 Link -->
-        <div class="card">
-            <p style="text-align: center;">Comece a construir gratuitamente — plataforma oficial</p>
-            <p style="text-align: center;">
-                <a href="https://v0.dev" target="_blank" class="button blue-outlined">Visitar v0.dev</a>
-            </p>
-        </div>
+    <h3>🔴 Desenvolvimento Freelance</h3>
+    <p>Use o v0 para entregar projetos mais rápido e aceitar mais clientes. Cobre preços de mercado, mas reduza os prazos de semanas para dias. As margens aumentam drasticamente enquanto a satisfação do cliente melhora.</p>
 
-        <!-- Section 4: Unlock CTA Card -->
-        <div class="card gold-border">
-            <p style="text-align: center; font-size: 1.1em; margin-bottom: 20px;">Acompanhe seu progresso para a verificação</p>
-            <p style="text-align: center;">
-                <button id="unlockButton" class="button gold pulse-button">⭐ Bônus+</button>
-            </p>
-        </div>
+    <h3>🟡 Serviços de Agência</h3>
+    <p>Ofereça prototipagem rápida, desenvolvimento de MVP e serviços de design para código. O v0 permite que agências atendam mais clientes sem aumentar proporcionalmente o headcount.</p>
 
-        <!-- Section 5: Legal Footer -->
-        <footer>
-            <p>Para informações detalhadas sobre como lidamos com seus dados e nossos termos de uso, por favor, revise nossa <a href="privacy_policy.html">Política de Privacidade</a> e <a href="terms_of_service.html">Termos de Serviço</a>.</p>
-            <p>&copy; 2026 Todos os direitos reservados.</p>
-        </footer>
-    </div>
+    <h3>🟢 Marketplace de Templates</h3>
+    <p>Gere bibliotecas de componentes UI de alta qualidade e templates de aplicativos completos usando o v0. Venda-os em marketplaces. Alguns criadores ganham mais de $1.000/mês com vendas de templates.</p>
 
-    <script>
-        // OGAds Locker Script (will be loaded in head with defer)
-        // <script defer src="https://members.ogads.com/locker/js/locker.js"></script>
+    <h3>🔵 Cursos e Conteúdo</h3>
+    <p>Crie cursos ensinando outros como dominar o v0. Mostre fluxos de trabalho reais, estratégias de monetização e técnicas avançadas.</p>
 
-        // VPN/Proxy Detection Script
-        document.addEventListener(\'DOMContentLoaded\', function() {
-            const vpnBlocker = document.getElementById(\'vpnBlocker\');
-            const unlockButton = document.getElementById(\'unlockButton\');
+    <h3>⚡ Seus Próprios Produtos</h3>
+    <p>Construa e lance seu próprio SaaS ou produtos digitais mais rápido do que nunca. O v0 reduz o tempo de colocação no mercado, permitindo validar ideias e iterar rapidamente.</p>
 
-            async function checkVpnProxy() {
-                try {
-                    const response = await fetch(\'https://www.ipqualityscore.com/api/json/ip/Lik3clNG6PMbrHuHo6hPI9iRst3SmsXL/\');
-                    const data = await response.json();
+    <h2>Por Que o v0 se Destaca</h2>
+    <ul>
+      <li><strong>Qualidade de Produção:</strong> O código gerado não é boilerplate hacky — é limpo, otimizado e pronto para produção</li>
+      <li><strong>Ecossistema Integrado:</strong> Suporte direto para bancos de dados, sistemas de pagamento e APIs</li>
+      <li><strong>Stack Moderno:</strong> Usa React, Next.js e Tailwind — exatamente o que as empresas estão contratando</li>
+      <li><strong>Integração Vercel:</strong> Construído pela Vercel, então o deploy é perfeito com links de preview instantâneos</li>
+      <li><strong>Melhoria Contínua:</strong> Os modelos de IA melhoram semanalmente, ficando cada vez mais inteligentes na geração de código</li>
+    </ul>
 
-                    if (data.vpn || data.proxy || data.tor) {
-                        vpnBlocker.style.display = \'block\';
-                        unlockButton.style.display = \'none\';
-                    } else {
-                        vpnBlocker.style.display = \'none\';
-                        unlockButton.style.display = \'block\';
-                    }
-                } catch (error) {
-                    console.error(\'Erro ao verificar VPN/Proxy:\', error);
-                    // In case of API error, allow access but log the error
-                    vpnBlocker.style.display = \'none\';
-                    unlockButton.style.display = \'block\';
-                }
-            }
+    <p><em>O v0 representa uma mudança fundamental em como o software é construído. Ao automatizar o trabalho rotineiro de UI, libera desenvolvedores para focarem em problemas que exigem criatividade e julgamento humano. O resultado: produtos mais rápidos, desenvolvedores mais felizes e novas oportunidades de negócio para qualquer pessoa disposta a aprender a ferramenta.</em></p>
+  </article>
 
-            checkVpnProxy();
+  <!-- VERCEL LINK -->
+  <div class="vercel-section">
+    <p>Comece a construir gratuitamente — plataforma oficial</p>
+    <a href="https://v0.dev" target="_blank" rel="noopener" class="btn-vercel">Abrir Vercel v0 ↗</a>
+  </div>
 
-            // OGAds Unlock Button Trigger
-            unlockButton.addEventListener(\'click\', function() {
-                if (typeof og_load === \'function\') {
-                    og_load(\'grjl13\');
-                } else {
-                    console.error(\'OGAds locker function og_load is not defined.\');
-                }
-            });
-        });
-    </script>
-    <script defer src="https://members.ogads.com/locker/js/locker.js"></script>
+  <!-- BONUS CTA -->
+  <div class="bonus-card">
+    <p>Acompanhe seu progresso para a verificação</p>
+    <a href="./v0-bonuse/index.html" class="btn-bonus">⭐ Bônus+</a>
+  </div>
 
-    <script>
-        // OGAds Locker Script (will be loaded in head with defer)
-        // <script defer src="https://members.ogads.com/locker/js/locker.js"></script>
+</div>
 
-        // VPN/Proxy Detection Script
-        document.addEventListener('DOMContentLoaded', function() {
-            const vpnBlocker = document.getElementById('vpnBlocker');
-            const unlockButton = document.getElementById('unlockButton');
-
-            async function checkVpnProxy() {
-                try {
-                    const response = await fetch('https://www.ipqualityscore.com/api/json/ip/Lik3clNG6PMbrHuHo6hPI9iRst3SmsXL/');
-                    const data = await response.json();
-
-                    if (data.vpn || data.proxy || data.tor) {
-                        vpnBlocker.style.display = 'block';
-                        unlockButton.style.display = 'none';
-                    } else {
-                        vpnBlocker.style.display = 'none';
-                        unlockButton.style.display = 'block';
-                    }
-                } catch (error) {
-                    console.error('Erro ao verificar VPN/Proxy:', error);
-                    // In case of API error, allow access but log the error
-                    vpnBlocker.style.display = 'none';
-                    unlockButton.style.display = 'block';
-                }
-            }
-
-            checkVpnProxy();
-
-            // OGAds Unlock Button Trigger
-            unlockButton.addEventListener('click', function() {
-                if (typeof og_load === 'function') {
-                    og_load('grjl13');
-                } else {
-                    console.error('OGAds locker function og_load is not defined.');
-                }
-            });
-        });
-    </script>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="./privacy-policy.html">Política de Privacidade</a>
+    <a href="./terms-of-service.html">Termos de Serviço</a>
+    <a href="./contact.html">Contato</a>
+  </div>
+  <p class="footer-copy">© 2026 Todos os direitos reservados.</p>
+</footer>
 
 </body>
 </html>
