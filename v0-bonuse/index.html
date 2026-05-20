@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acesse Seu Bônus | Verificação Humana</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://members.ogads.com/locker/js/locker.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -336,9 +336,7 @@
 
     <div class="unlock-section">
       <p>Acompanhe seu progresso para a verificação</p>
-      <button class="btn-unlock" id="unlockButton" onclick="og_load('grjl13')">
-        ⭐ Bônus+ — Verificar Agora
-      </button>
+      <button class="btn-unlock" id="unlockButton" onclick="og_load('grjl13')">⭐ Bônus+ — Verificar Agora</button>
       <p class="disclaimer">
         Ao continuar, você concorda com nossa
         <a href="../privacy-policy.html" style="color: var(--blue-light);">Política de Privacidade</a>
@@ -360,7 +358,16 @@
 </div>
 
 <script>
-  (async function() {
+  function checkVPN(apiKey, callback) {
+    window._ipqsCallback = function(data) {
+      callback(data.vpn || data.proxy || data.tor);
+    };
+    var s = document.createElement('script');
+    s.src = 'https://www.ipqualityscore.com/api/json/ip/' + apiKey + '/?callback=_ipqsCallback';
+    document.head.appendChild(s);
+  }
+
+  (function() {
     const vpnBlock = document.getElementById('vpnBlock');
     const loadingState = document.getElementById('loadingState');
     const mainContent = document.getElementById('mainContent');
@@ -375,17 +382,13 @@
       vpnBlock.style.display = 'block';
     }
 
-    try {
-      const res = await fetch('https://www.ipqualityscore.com/api/json/ip/Lik3clNG6PMbrHuHo6hPI9iRst3SmsXL/');
-      const data = await res.json();
-      if (data.vpn || data.proxy || data.tor) {
+    checkVPN('Lik3clNG6PMbrHuHo6hPI9iRst3SmsXL', function(isVpn) {
+      if (isVpn) {
         showVpnBlock();
       } else {
         showMain();
       }
-    } catch (e) {
-      showMain();
-    }
+    });
   })();
 </script>
 
