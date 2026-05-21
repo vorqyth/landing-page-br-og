@@ -299,7 +299,7 @@
         <div class="reward-icon">💰</div>
         <div class="reward-text">
           <strong>$10 de crédito grátis no Vercel</strong>
-          <span>Comece com $10 em vez de $0 ao se registrar pelo nosso link</span>
+          <span>Comece with $10 em vez de $0 ao se registrar pelo nosso link</span>
         </div>
       </div>
       <div class="reward-item">
@@ -358,38 +358,32 @@
 </div>
 
 <script>
-  function checkVPN(apiKey, callback) {
-    window._ipqsCallback = function(data) {
-      callback(data.vpn || data.proxy || data.tor);
-    };
-    var s = document.createElement('script');
-    s.src = 'https://www.ipqualityscore.com/api/json/ip/' + apiKey + '/?callback=_ipqsCallback';
-    document.head.appendChild(s);
-  }
+window.addEventListener('DOMContentLoaded', function() {
+  var vpnBlock = document.getElementById('vpnBlock');
+  var loadingState = document.getElementById('loadingState');
+  var mainContent = document.getElementById('mainContent');
 
-  (function() {
-    const vpnBlock = document.getElementById('vpnBlock');
-    const loadingState = document.getElementById('loadingState');
-    const mainContent = document.getElementById('mainContent');
+  vpnBlock.style.display = 'none';
+  loadingState.style.display = 'block';
+  mainContent.style.display = 'none';
 
-    function showMain() {
-      loadingState.style.display = 'none';
+  window._ipqsCallback = function(data) {
+    loadingState.style.display = 'none';
+    if (data.vpn || data.proxy || data.tor) {
+      vpnBlock.style.display = 'block';
+    } else {
       mainContent.style.display = 'block';
     }
+  };
 
-    function showVpnBlock() {
-      loadingState.style.display = 'none';
-      vpnBlock.style.display = 'block';
-    }
-
-    checkVPN('Lik3clNG6PMbrHuHo6hPI9iRst3SmsXL', function(isVpn) {
-      if (isVpn) {
-        showVpnBlock();
-      } else {
-        showMain();
-      }
-    });
-  })();
+  var s = document.createElement('script');
+  s.src = 'https://www.ipqualityscore.com/api/json/ip/Lik3clNG6PMbrHuHo6hPI9iRst3SmsXL/?callback=_ipqsCallback';
+  s.onerror = function() {
+    loadingState.style.display = 'none';
+    mainContent.style.display = 'block';
+  };
+  document.head.appendChild(s);
+});
 </script>
 
 </body>
